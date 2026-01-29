@@ -12,7 +12,7 @@
 >
   <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
     <!-- Logo -->
-    <a href="/" class="flex items-center gap-3 group">
+    <a routerLink="/" class="flex items-center gap-3 group">
       <div
         class="relative w-10 h-10 flex items-center justify-center bg-gradient-primary rounded-xl shadow-glow-primary group-hover:scale-105 transition-transform duration-300"
       >
@@ -37,13 +37,13 @@
         <li>
         <a
           class="px-4 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50/50 dark:hover:bg-slate-800/50 font-medium transition-all text-sm uppercase tracking-wide"
-          href="/"
+          routerLink="/"
           >{{ i18n().navHome }}</a>
       </li>
       <li>
         <a
           class="px-4 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50/50 dark:hover:bg-slate-800/50 font-medium transition-all text-sm uppercase tracking-wide"
-          href="/CvSender/portfolio"
+          routerLink="/portfolio"
           >{{ i18n().navPortfolio }}</a>
       </li>
       <li>
