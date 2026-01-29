@@ -11,6 +11,6 @@ import { Navbar } from './layout/navbar/navbar';
   styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('test');
+  protected readonly title = signal('CvSender');
 
 }

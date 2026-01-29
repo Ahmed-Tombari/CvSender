@@ -5,7 +5,7 @@ import { LineChartsComponent } from "../charts/line-charts/line-charts";
 import { ColumenChartsComponent } from "../charts/columen-charts/columen-charts";
 import { PieChartsComponent } from "../charts/pie-charts/pie-charts";
 import { Map } from "../shared/map/map";
-import { Test4 } from "../test4/test4";
+import { SummaryComponent } from "../summary/summary";
 import { DashboardService } from '../../core/services/dashboard.service';
 import { i18n } from '../../core/services/i18n.service';
 
@@ -14,7 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [ApplyDialogComponent, LineChartsComponent, ColumenChartsComponent, PieChartsComponent, Map, Test4, MatIconModule],
+  imports: [ApplyDialogComponent, LineChartsComponent, ColumenChartsComponent, PieChartsComponent, Map, SummaryComponent, MatIconModule],
   templateUrl: './landing.html',
   styleUrls: ['./landing.scss']
 })

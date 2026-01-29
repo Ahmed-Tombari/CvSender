@@ -3,34 +3,20 @@ import { provideHttpClient } from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { provideZonelessChangeDetection } from '@angular/core';
 
-import { Map } from './map';
+import { SummaryComponent } from './summary';
 
-// Mock Google Charts API
-(window as any).google = {
-  charts: {
-    load: () => {},
-    setOnLoadCallback: (callback: any) => callback()
-  },
-  visualization: {
-    arrayToDataTable: () => ({}),
-    GeoChart: class {
-      draw() {}
-    }
-  }
-};
-
-describe('Map', () => {
-  let component: Map;
-  let fixture: ComponentFixture<Map>;
+describe('SummaryComponent', () => {
+  let component: SummaryComponent;
+  let fixture: ComponentFixture<SummaryComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Map],
+      imports: [SummaryComponent],
       providers: [provideHttpClient(), provideHttpClientTesting(), provideZonelessChangeDetection()]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Map);
+    fixture = TestBed.createComponent(SummaryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

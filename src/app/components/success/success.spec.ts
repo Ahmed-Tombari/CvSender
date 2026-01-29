@@ -1,18 +1,22 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { provideZonelessChangeDetection } from '@angular/core';
 
-import { Success } from './success';
+import { ApplySuccessComponent } from './success';
 
-describe('Success', () => {
-  let component: Success;
-  let fixture: ComponentFixture<Success>;
+describe('ApplySuccessComponent', () => {
+  let component: ApplySuccessComponent;
+  let fixture: ComponentFixture<ApplySuccessComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Success]
+      imports: [ApplySuccessComponent],
+      providers: [provideHttpClient(), provideHttpClientTesting(), provideZonelessChangeDetection()]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Success);
+    fixture = TestBed.createComponent(ApplySuccessComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

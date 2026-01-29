@@ -4,12 +4,12 @@ import { DashboardService } from '../../core/services/dashboard.service';
 import { i18n } from '../../core/services/i18n.service';
 
 @Component({
-  selector: 'app-test4',
+  selector: 'app-summary',
   imports: [StatCardComponent],
-  templateUrl: './test4.html',
-  styleUrl: './test4.scss',
+  templateUrl: './summary.html',
+  styleUrl: './summary.scss',
 })
-export class Test4 {
+export class SummaryComponent {
   private dashboardService = inject(DashboardService);
   public i18n = i18n;
   summary = this.dashboardService.summary;

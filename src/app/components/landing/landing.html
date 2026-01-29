@@ -1,84 +1,206 @@
-<div class="relative min-h-screen bg-slate-50 dark:bg-slate-950 font-sans transition-colors duration-500">
-
+<div
+  class="relative min-h-screen bg-slate-50 dark:bg-slate-950 font-sans transition-colors duration-500"
+>
   <!-- Hero Section with Gradient -->
   <div class="relative bg-gradient-primary pt-32 pb-24 px-6 md:px-12 overflow-hidden">
-    <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-soft-light"></div>
+    <div
+      class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-soft-light"
+    ></div>
     <!-- Decorative Circles -->
-    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-white/10 blur-3xl animate-pulse-slow"></div>
-    <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-white/10 blur-3xl animate-pulse-slow" style="animation-delay: 1s;"></div>
+    <div
+      class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-white/10 blur-3xl animate-pulse-slow"
+    ></div>
+    <div
+      class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-white/10 blur-3xl animate-pulse-slow"
+      style="animation-delay: 1s"
+    ></div>
 
     <div class="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
       <!-- Profile Image -->
       <div class="relative group animate-scale-in">
-         <div class="absolute -inset-2 bg-white/30 rounded-full blur-md opacity-75 group-hover:opacity-100 transition duration-500"></div>
-        <img src="/assets/images/at.jpeg" alt="Ahmed Tombari"
-             class="relative w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-white shadow-2xl transform transition duration-500 group-hover:scale-105">
-        <div class="absolute bottom-4 right-4 w-6 h-6 bg-secondary-start border-4 border-white rounded-full shadow-md animate-bounce"></div>
-       </div>
+        <div
+          class="absolute -inset-2 bg-white/30 rounded-full blur-md opacity-75 group-hover:opacity-100 transition duration-500"
+        ></div>
+        <img
+          src="/assets/images/at.jpeg"
+          alt="Ahmed Tombari"
+          class="relative w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-white shadow-2xl transform transition duration-500 group-hover:scale-105"
+        />
+        <div
+          class="absolute bottom-4 right-4 w-6 h-6 bg-secondary-start border-4 border-white rounded-full shadow-md animate-bounce"
+        ></div>
+      </div>
 
       <!-- Profile Info -->
       <div class="flex-1 text-center md:text-left text-white space-y-8 animate-slide-up">
         <div>
-          <h1 class="text-5xl md:text-6xl font-bold font-display mb-3 tracking-tight drop-shadow-sm">{{ i18n().heroTitle }}</h1>
+          <h1
+            class="text-5xl md:text-6xl font-bold font-display mb-3 tracking-tight drop-shadow-sm"
+          >
+            {{ i18n().heroTitle }}
+          </h1>
           <p class="text-xl text-blue-50 font-medium">{{ i18n().heroRole }}</p>
-          <div class="flex items-center justify-center md:justify-start gap-2 text-blue-100 text-sm mt-2 font-medium">
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13 21.0153532 2.5 12 2.5 2.5 12 2.5z"/></svg>
+          <div
+            class="flex items-center justify-center md:justify-start gap-2 text-blue-100 text-sm mt-2 font-medium"
+          >
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17.657 16.657L13 21.0153532 2.5 12 2.5 2.5 12 2.5z"
+              />
+            </svg>
             <span>{{ i18n().heroLocation }}</span>
           </div>
         </div>
 
         <div class="flex flex-col gap-3">
-  <!-- Ligne 1 : 3 tags -->
-  <div class="flex flex-wrap justify-center md:justify-start gap-3">
-    <span class="px-5 py-2 rounded-full bg-white/20 backdrop-blur-md text-white text-sm font-bold border border-white/20 shadow-sm">
-      {{ i18n().heroTagConception }}
-    </span>
+          <!-- Ligne 1 : 3 tags -->
+          <div class="flex flex-wrap justify-center md:justify-start gap-3">
+            <span
+              class="px-5 py-2 rounded-full bg-white/20 backdrop-blur-md text-white text-sm font-bold border border-white/20 shadow-sm"
+            >
+              {{ i18n().heroTagConception }}
+            </span>
 
-    <span class="px-5 py-2 rounded-full bg-white/20 backdrop-blur-md text-white text-sm font-bold border border-white/20 shadow-sm">
-      {{ i18n().heroTagResearch }}
-    </span>
+            <span
+              class="px-5 py-2 rounded-full bg-white/20 backdrop-blur-md text-white text-sm font-bold border border-white/20 shadow-sm"
+            >
+              {{ i18n().heroTagResearch }}
+            </span>
 
-    <span class="px-5 py-2 rounded-full bg-white/20 backdrop-blur-md text-white text-sm font-bold border border-white/20 shadow-sm">
-      {{ i18n().heroTagManagement }}
-    </span>
-  </div>
+            <span
+              class="px-5 py-2 rounded-full bg-white/20 backdrop-blur-md text-white text-sm font-bold border border-white/20 shadow-sm"
+            >
+              {{ i18n().heroTagManagement }}
+            </span>
+          </div>
 
-  <!-- Ligne 2 : 2 tags -->
-  <div class="flex flex-wrap justify-center md:justify-start gap-3">
-    <span class="px-5 py-2 rounded-full bg-white/20 backdrop-blur-md text-white text-sm font-bold border border-white/20 shadow-sm">
-      {{ i18n().heroTagStrategy }}
-    </span>
+          <!-- Ligne 2 : 2 tags -->
+          <div class="flex flex-wrap justify-center md:justify-start gap-3">
+            <span
+              class="px-5 py-2 rounded-full bg-white/20 backdrop-blur-md text-white text-sm font-bold border border-white/20 shadow-sm"
+            >
+              {{ i18n().heroTagStrategy }}
+            </span>
 
-    <span class="px-5 py-2 rounded-full bg-white/20 backdrop-blur-md text-white text-sm font-bold border border-white/20 shadow-sm">
-      {{ i18n().heroTagStrategy2 }}
-    </span>
-  </div>
-</div>
-
+            <span
+              class="px-5 py-2 rounded-full bg-white/20 backdrop-blur-md text-white text-sm font-bold border border-white/20 shadow-sm"
+            >
+              {{ i18n().heroTagStrategy2 }}
+            </span>
+          </div>
+        </div>
 
         <div class="flex items-center justify-center md:justify-start gap-4 pt-2">
-          <button class="bg-white text-primary hover:bg-blue-50 font-bold py-3.5 px-8 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center gap-2 group" (click)="openApply()">
+          <button
+            class="bg-white text-primary hover:bg-blue-50 font-bold py-3.5 px-8 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center gap-2 group"
+            (click)="openApply()"
+          >
             <span>{{ i18n().heroSendMessage }}</span>
-            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            <svg
+              class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              />
             </svg>
           </button>
-          <button class="px-8 py-3.5 rounded-xl font-bold text-white border-2 border-white/30 hover:bg-white/10 hover:border-white/50 transition-all duration-300 backdrop-blur-sm">{{ i18n().heroViewPortfolio }}</button>
+          <button
+            class="px-8 py-3.5 rounded-xl font-bold text-white border-2 border-white/30 hover:bg-white/10 hover:border-white/50 transition-all duration-300 backdrop-blur-sm"
+          >
+            {{ i18n().heroViewPortfolio }}
+          </button>
         </div>
 
         <!-- Social Icons -->
         <div class="flex items-center justify-center md:justify-start gap-4 pt-4 text-white/70">
-          <a [href]="'mailto:' + i18n().portfolioEmail" class="p-2 rounded-lg bg-white/10 hover:bg-white/20 hover:text-white transition-all transform hover:-translate-y-1 shadow-sm" [title]="i18n().portfolioEmail">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <a
+            [href]="'mailto:' + i18n().portfolioEmail"
+            class="p-2 rounded-lg bg-white/10 hover:bg-white/20 hover:text-white transition-all transform hover:-translate-y-1 shadow-sm"
+            [title]="i18n().portfolioEmail"
+          >
+            <svg
+              class="w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect width="20" height="16" x="2" y="4" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
           </a>
-          <a [href]="'tel:' + i18n().portfolioPhone" class="p-2 rounded-lg bg-white/10 hover:bg-white/20 hover:text-white transition-all transform hover:-translate-y-1 shadow-sm" [title]="i18n().portfolioPhone">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a
+            [href]="'tel:' + i18n().portfolioPhone"
+            class="p-2 rounded-lg bg-white/10 hover:bg-white/20 hover:text-white transition-all transform hover:-translate-y-1 shadow-sm"
+            [title]="i18n().portfolioPhone"
+          >
+            <svg
+              class="w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+              />
+            </svg>
           </a>
-          <a [href]="i18n().portfolioGithub" target="_blank" class="p-2 rounded-lg bg-white/10 hover:bg-white/20 hover:text-white transition-all transform hover:-translate-y-1 shadow-sm" title="GitHub">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          <a
+            [href]="i18n().portfolioGithub"
+            target="_blank"
+            class="p-2 rounded-lg bg-white/10 hover:bg-white/20 hover:text-white transition-all transform hover:-translate-y-1 shadow-sm"
+            title="GitHub"
+          >
+            <svg
+              class="w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+              />
+              <path d="M9 18c-4.51 2-5-2-7-2" />
+            </svg>
           </a>
-          <a [href]="i18n().portfolioLinkedin" target="_blank" class="p-2 rounded-lg bg-white/10 hover:bg-white/20 hover:text-white transition-all transform hover:-translate-y-1 shadow-sm" title="LinkedIn">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          <a
+            [href]="i18n().portfolioLinkedin"
+            target="_blank"
+            class="p-2 rounded-lg bg-white/10 hover:bg-white/20 hover:text-white transition-all transform hover:-translate-y-1 shadow-sm"
+            title="LinkedIn"
+          >
+            <svg
+              class="w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+              />
+              <rect width="4" height="12" x="2" y="9" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
           </a>
         </div>
       </div>
@@ -86,122 +208,158 @@
   </div>
 
   <div class="max-w-7xl mx-auto px-6 md:px-12 -mt-16 relative z-20 space-y-8 pb-16">
-     <div class="grid grid-cols-1 lg:grid-cols-1 gap-x-20">
-    <app-test4></app-test4>
+    <div class="grid grid-cols-1 lg:grid-cols-1 gap-x-20">
+      <app-summary></app-summary>
     </div>
     <!-- Stats / Charts Section -->
-<!-- 2 UP – 2 DOWN -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <!-- 2 UP – 2 DOWN -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- CARD 4 -->
+      <div class="glass-card animate-slide-up" style="animation-delay: 400ms">
+        <div class="card-header">
+          <h3
+            class="text-lg font-bold text-slate-800 dark:text-white font-display flex items-center gap-2"
+          >
+            <span class="w-2 h-6 bg-gradient-danger rounded-full"></span>
+            {{ i18n().cardGlobalReach }}
+          </h3>
+        </div>
+        <div class="card-body p-0 overflow-hidden rounded-b-2xl">
+          <app-map></app-map>
+        </div>
+      </div>
 
+      <!-- CARD 1 -->
+      <div class="glass-card animate-slide-up" style="animation-delay: 100ms">
+        <div class="card-header flex justify-between items-center">
+          <h3
+            class="text-lg font-bold text-slate-800 dark:text-white font-display flex items-center gap-2"
+          >
+            <span class="w-2 h-6 bg-gradient-primary rounded-full"></span>
+            {{ i18n().cardMonthlyUploads }}
+          </h3>
+          <div class="flex gap-2">
+            <select
+              (change)="lineChart.onYearChange($event)"
+              class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-200 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block p-1.5 shadow-sm outline-none cursor-pointer"
+            >
+              @for (year of lineChart.availableYears(); track year) {
+                <option [value]="year" [selected]="year === lineChart.selectedYear()">
+                  {{ year }}
+                </option>
+              }
+            </select>
+          </div>
+        </div>
+        <div class="card-body">
+          <app-line-charts #lineChart></app-line-charts>
+        </div>
+      </div>
 
-  <!-- CARD 4 -->
-  <div class="glass-card animate-slide-up" style="animation-delay: 400ms;">
-    <div class="card-header">
-      <h3 class="text-lg font-bold text-slate-800 dark:text-white font-display flex items-center gap-2">
-        <span class="w-2 h-6 bg-gradient-danger rounded-full"></span>
-        {{ i18n().cardGlobalReach }}
-      </h3>
-    </div>
-    <div class="card-body p-0 overflow-hidden rounded-b-2xl">
-      <app-map></app-map>
-    </div>
-  </div>
+      <!-- CARD 2 -->
+      <div class="glass-card animate-slide-up" style="animation-delay: 200ms">
+        <div class="card-header border-b-0 pb-0 flex justify-between items-center">
+          <h3
+            class="text-lg font-bold text-slate-800 dark:text-white font-display flex items-center gap-2"
+          >
+            <span class="w-2 h-6 bg-gradient-secondary rounded-full"></span>
+            {{ i18n().cardUserDemographics }}
+          </h3>
+          <div class="flex gap-2">
+            <select
+              (change)="pieChart.onYearChange($event)"
+              class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-200 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block p-1.5 shadow-sm outline-none cursor-pointer"
+            >
+              @for (year of pieChart.availableYears(); track year) {
+                <option [value]="year" [selected]="year === pieChart.selectedYear()">
+                  {{ year }}
+                </option>
+              }
+            </select>
+          </div>
+        </div>
+        <div class="card-body">
+          <app-pie-charts #pieChart></app-pie-charts>
+        </div>
+      </div>
 
-  <!-- CARD 1 -->
-  <div class="glass-card animate-slide-up" style="animation-delay: 100ms;">
-    <div class="card-header flex justify-between items-center">
-      <h3 class="text-lg font-bold text-slate-800 dark:text-white font-display flex items-center gap-2">
-        <span class="w-2 h-6 bg-gradient-primary rounded-full"></span>
-        {{ i18n().cardMonthlyUploads }}
-      </h3>
-      <div class="flex gap-2">
-        <select
-          (change)="lineChart.onYearChange($event)"
-          class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-200 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block p-1.5 shadow-sm outline-none cursor-pointer"
-        >
-          @for(year of lineChart.availableYears(); track year) {
-            <option [value]="year" [selected]="year === lineChart.selectedYear()">{{ year }}</option>
-          }
-        </select>
+      <!-- CARD 3 -->
+      <div class="glass-card animate-slide-up" style="animation-delay: 300ms">
+        <div class="card-header border-b-0 pb-0 flex justify-between items-center">
+          <h3
+            class="text-lg font-bold text-slate-800 dark:text-white font-display flex items-center gap-2"
+          >
+            <span class="w-2 h-6 bg-gradient-warning rounded-full"></span>
+            {{ i18n().cardSizeEvolution }}
+          </h3>
+          <div class="flex gap-2">
+            <select
+              (change)="colChart.onYearChange($event)"
+              class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-200 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block p-1.5 shadow-sm outline-none cursor-pointer"
+            >
+              @for (year of colChart.availableYears(); track year) {
+                <option [value]="year" [selected]="year === colChart.selectedYear()">
+                  {{ year }}
+                </option>
+              }
+            </select>
+          </div>
+        </div>
+        <div class="card-body">
+          <app-columen-charts #colChart></app-columen-charts>
+        </div>
       </div>
     </div>
-    <div class="card-body">
-      <app-line-charts #lineChart></app-line-charts>
-    </div>
-  </div>
-
-  <!-- CARD 2 -->
-  <div class="glass-card animate-slide-up" style="animation-delay: 200ms;">
-    <div class="card-header border-b-0 pb-0 flex justify-between items-center">
-      <h3 class="text-lg font-bold text-slate-800 dark:text-white font-display flex items-center gap-2">
-        <span class="w-2 h-6 bg-gradient-secondary rounded-full"></span>
-        {{ i18n().cardUserDemographics }}
-      </h3>
-      <div class="flex gap-2">
-        <select
-          (change)="pieChart.onYearChange($event)"
-          class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-200 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block p-1.5 shadow-sm outline-none cursor-pointer"
-        >
-          @for(year of pieChart.availableYears(); track year) {
-            <option [value]="year" [selected]="year === pieChart.selectedYear()">{{ year }}</option>
-          }
-        </select>
-      </div>
-    </div>
-    <div class="card-body">
-      <app-pie-charts #pieChart></app-pie-charts>
-    </div>
-  </div>
-
-  <!-- CARD 3 -->
-  <div class="glass-card animate-slide-up" style="animation-delay: 300ms;">
-    <div class="card-header border-b-0 pb-0 flex justify-between items-center">
-      <h3 class="text-lg font-bold text-slate-800 dark:text-white font-display flex items-center gap-2">
-        <span class="w-2 h-6 bg-gradient-warning rounded-full"></span>
-        {{ i18n().cardSizeEvolution }}
-      </h3>
-      <div class="flex gap-2">
-        <select
-          (change)="colChart.onYearChange($event)"
-          class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-200 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block p-1.5 shadow-sm outline-none cursor-pointer"
-        >
-          @for(year of colChart.availableYears(); track year) {
-            <option [value]="year" [selected]="year === colChart.selectedYear()">{{ year }}</option>
-          }
-        </select>
-      </div>
-    </div>
-    <div class="card-body">
-      <app-columen-charts #colChart></app-columen-charts>
-    </div>
-  </div>
-</div>
 
     <!-- CTA Section -->
-    <section class="relative rounded-2xl overflow-hidden shadow-glow-primary animate-slide-up group" style="animation-delay: 500ms;">
-      <div class="absolute inset-0 bg-gradient-primary transition-transform duration-700 group-hover:scale-105"></div>
-      <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
+    <section
+      class="relative rounded-2xl overflow-hidden shadow-glow-primary animate-slide-up group"
+      style="animation-delay: 500ms"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-primary transition-transform duration-700 group-hover:scale-105"
+      ></div>
+      <div
+        class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"
+      ></div>
 
       <div class="relative z-10 p-12 md:p-20 text-center text-white">
-        <h2 class="text-3xl md:text-5xl font-bold font-display mb-6 tracking-tight">{{ i18n().ctaTitle }}</h2>
+        <h2 class="text-3xl md:text-5xl font-bold font-display mb-6 tracking-tight">
+          {{ i18n().ctaTitle }}
+        </h2>
         <p class="text-xl text-blue-50 mb-10 max-w-2xl mx-auto font-medium leading-relaxed">
           {{ i18n().ctaSubtitle }}
         </p>
-        <button class="bg-white text-primary hover:bg-blue-50 font-bold py-4 px-12 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-lg flex items-center gap-2 mx-auto group" (click)="openApply()">
+        <button
+          class="bg-white text-primary hover:bg-blue-50 font-bold py-4 px-12 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-lg flex items-center gap-2 mx-auto group"
+          (click)="openApply()"
+        >
           {{ i18n().ctaButton }}
-          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          <svg
+            class="w-5 h-5 group-hover:translate-x-1 transition-transform"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"
+            />
           </svg>
         </button>
       </div>
     </section>
-
   </div>
 
   <!-- Apply Modal -->
   @if (modalOpen()) {
     <div class="fixed inset-0 z-[9999] overflow-y-auto custom-scrollbar">
-      <div class="fixed inset-0 bg-slate-900/40 backdrop-blur-md transition-opacity" (click)="closeApply()"></div>
+      <div
+        class="fixed inset-0 bg-slate-900/40 backdrop-blur-md transition-opacity"
+        (click)="closeApply()"
+      ></div>
       <div class="flex min-h-full justify-center p-4 py-12">
         <div class="relative z-10 w-full max-w-4xl my-auto pointer-events-auto">
           <app-apply-dialog [isOpen]="modalOpen()" (closed)="closeApply()" />
@@ -210,152 +368,285 @@
     </div>
   }
 
-      <!-- Footer -->
-    <footer class="relative pt-32 pb-12 overflow-hidden">
-       <!-- Footer Background Decoration -->
-       <div class="absolute inset-0 pointer-events-none">
-          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-full bg-slate-50 dark:bg-slate-950 transition-colors duration-500"></div>
-          <div class="absolute bottom-[-10%] left-[20%] w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] animate-pulse-slow"></div>
-          <div class="absolute bottom-[-5%] right-[20%] w-[300px] h-[300px] bg-secondary/10 rounded-full blur-[80px] animate-pulse-slow" style="animation-delay: 2s"></div>
-       </div>
+  <!-- Footer -->
+  <footer class="relative pt-32 pb-12 overflow-hidden">
+    <!-- Footer Background Decoration -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div
+        class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-full bg-slate-50 dark:bg-slate-950 transition-colors duration-500"
+      ></div>
+      <div
+        class="absolute bottom-[-10%] left-[20%] w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] animate-pulse-slow"
+      ></div>
+      <div
+        class="absolute bottom-[-5%] right-[20%] w-[300px] h-[300px] bg-secondary/10 rounded-full blur-[80px] animate-pulse-slow"
+        style="animation-delay: 2s"
+      ></div>
+    </div>
 
-       <div class="container mx-auto px-6 max-w-7xl relative z-10">
-          <div class="glass-card p-12 md:p-16 rounded-[3rem] mb-12 border-white/40 dark:border-slate-800/40">
-             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 items-start">
-
-                <!-- Brand Section -->
-                <div class="lg:col-span-4 space-y-8">
-                   <div class="flex items-center gap-3">
-                      <div class="relative w-12 h-12 flex items-center justify-center bg-gradient-primary rounded-2xl shadow-glow-primary group-hover:scale-105 transition-transform duration-300">
-                        <span class="text-white font-bold text-base font-display">CV</span>
-                      </div>
-                      <span class="text-3xl font-bold text-slate-900 dark:text-white font-display">CV Sender</span>
-                   </div>
-                    <p class="text-slate-500 dark:text-slate-300 text-lg leading-relaxed font-medium">
-                       {{ i18n().portfolioFooterDesc || 'Crafting high-performance digital experiences with passion and precision.' }}
-                    </p>
-                   <!-- Newsletter / Simple Quick Contact -->
-                   <div class="p-2 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 flex items-center gap-2">
-                      <input type="text" [placeholder]="i18n().portfolioCtaEmailPlaceholder" class="flex-1 bg-transparent px-4 py-2 outline-none text-slate-700 dark:text-slate-300 text-sm">
-                      <button class="w-10 h-10 rounded-xl bg-slate-900 dark:bg-primary text-white flex items-center justify-center hover:scale-105 transition-transform">
-                         <mat-icon class="text-sm">arrow_forward</mat-icon>
-                      </button>
-                   </div>
-                </div>
-
-                <!-- Quick Links -->
-                <div class="lg:col-span-2 space-y-8">
-                   <h4 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-widest">{{ i18n().navMenu || 'Links' }}</h4>
-                   <ul class="space-y-4">
-                      @for (link of i18n().portfolioFooterLinks; track link) {
-                         <li>
-                            <a href="#" class="group flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-all font-medium">
-                               <span class="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-700 group-hover:w-4 group-hover:bg-primary transition-all"></span>
-                               {{ link }}
-                            </a>
-                         </li>
-                      }
-                   </ul>
-                </div>
-
-                <!-- Contact Info -->
-                 <div class="lg:col-span-3 space-y-8">
-                    <h4 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-widest">{{ i18n().portfolioContactTitleHighlight || 'Contact' }}</h4>
-                   <div class="space-y-6">
-                       <a [href]="'mailto:' + i18n().portfolioEmail" class="flex items-center gap-4 group">
-                          <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
-                             <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                          </div>
-                          <span class="text-slate-600 dark:text-slate-300 font-medium group-hover:text-primary transition-colors truncate">{{ i18n().portfolioEmail }}</span>
-                       </a>
-                       <a [href]="'tel:' + i18n().portfolioPhone" class="flex items-center gap-4 group">
-                          <div class="w-10 h-10 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center group-hover:bg-secondary group-hover:text-white transition-all">
-                             <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                          </div>
-                          <span class="text-slate-600 dark:text-slate-300 font-medium group-hover:text-secondary transition-colors">{{ i18n().portfolioPhone }}</span>
-                       </a>
-                       <a [href]="'add:' + i18n().portfolioAddress" class="flex items-center gap-4 group">
-                          <div class="w-10 h-10 rounded-xl bg-warning/10 text-warning flex items-center justify-center group-hover:bg-warning group-hover:text-white transition-all">
-                             <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                          </div>
-                          <span class="text-slate-600 dark:text-slate-300 font-medium group-hover:text-warning transition-colors">{{ i18n().portfolioAddress }}</span>
-                       </a>
-                   </div>
-                </div>
-
-                <!-- Social Stats/Links -->
-                <div class="lg:col-span-3 space-y-8">
-                   <h4 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-widest">{{ i18n().navGetStarted || 'Connect' }}</h4>
-                    <div class="flex flex-wrap gap-4">
-                       <!-- GitHub -->
-                       <div class="relative group">
-                          <a [href]="i18n().portfolioGithub" target="_blank" class="w-14 h-14 rounded-2xl glass-panel flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-900 dark:hover:bg-white hover:text-dark dark:hover:text-slate-900 transition-all group">
-                             <svg class="w-7 h-7 group-hover:rotate-12 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-                          </a>
-                          <!-- Popover -->
-                          <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-64 glass-panel rounded-2xl shadow-2xl transition-all duration-300 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 z-50 overflow-hidden border border-white/20 dark:border-slate-700/50 after:absolute after:-bottom-4 after:left-0 after:w-full after:h-4">
-                             <div class="px-4 py-2 bg-slate-900 text-white dark:bg-white dark:text-slate-900 border-b border-white/20 dark:border-slate-700/50">
-                                <h3 class="font-bold text-sm">{{ i18n().portfolioPopoverGithubTitle }}</h3>
-                             </div>
-                             <div class="px-4 py-3">
-                                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed text-left">{{ i18n().portfolioPopoverGithubDesc }}</p>
-                             </div>
-                             <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white/70 dark:bg-slate-900/80 rotate-45 border-r border-b border-white/20 dark:border-slate-700/50 -z-10"></div>
-                          </div>
-                       </div>
-
-                       <!-- LinkedIn -->
-                       <div class="relative group">
-                          <a [href]="i18n().portfolioLinkedin" target="_blank" class="w-14 h-14 rounded-2xl glass-panel flex items-center justify-center text-slate-600 dark:text-primary hover:bg-dark-50 hover:text-blue-700 transition-all group">
-                             <svg class="w-7 h-7 group-hover:-rotate-12 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                          </a>
-                          <!-- Popover -->
-                          <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-64 glass-panel rounded-2xl shadow-2xl transition-all duration-300 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 z-50 overflow-hidden border border-white/20 dark:border-slate-700/50 after:absolute after:-bottom-4 after:left-0 after:w-full after:h-4">
-                             <div class="px-4 py-2 bg-[#0077b5] text-white border-b border-white/20 dark:border-slate-700/50">
-                                <h3 class="font-bold text-sm">{{ i18n().portfolioPopoverLinkedinTitle }}</h3>
-                             </div>
-                             <div class="px-4 py-3">
-                                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed text-left">{{ i18n().portfolioPopoverLinkedinDesc }}</p>
-                             </div>
-                             <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-[#0077b5] rotate-45 border-r border-b border-white/20 dark:border-slate-700/50 -z-10"></div>
-                          </div>
-                       </div>
-
-                      <!-- Placeholder for other social -->
-                      <div class="w-14 h-14 rounded-2xl glass-panel flex items-center justify-center text-slate-300 dark:text-slate-700 cursor-not-allowed">
-                         <mat-icon class="scale-125">share</mat-icon>
-                      </div>
-                   </div>
-                </div>
-
-             </div>
+    <div class="container mx-auto px-6 max-w-7xl relative z-10">
+      <div
+        class="glass-card p-12 md:p-16 rounded-[3rem] mb-12 border-white/40 dark:border-slate-800/40"
+      >
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 items-start">
+          <!-- Brand Section -->
+          <div class="lg:col-span-4 space-y-8">
+            <div class="flex items-center gap-3">
+              <div
+                class="relative w-12 h-12 flex items-center justify-center bg-gradient-primary rounded-2xl shadow-glow-primary group-hover:scale-105 transition-transform duration-300"
+              >
+                <span class="text-white font-bold text-base font-display">CV</span>
+              </div>
+              <span class="text-3xl font-bold text-slate-900 dark:text-white font-display"
+                >CV Sender</span
+              >
+            </div>
+            <p class="text-slate-500 dark:text-slate-300 text-lg leading-relaxed font-medium">
+              {{
+                i18n().portfolioFooterDesc ||
+                  'Crafting high-performance digital experiences with passion and precision.'
+              }}
+            </p>
+            <!-- Newsletter / Simple Quick Contact -->
+            <div
+              class="p-2 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 flex items-center gap-2"
+            >
+              <input
+                type="text"
+                [placeholder]="i18n().portfolioCtaEmailPlaceholder"
+                class="flex-1 bg-transparent px-4 py-2 outline-none text-slate-700 dark:text-slate-300 text-sm"
+              />
+              <button
+                class="w-10 h-10 rounded-xl bg-slate-900 dark:bg-primary text-white flex items-center justify-center hover:scale-105 transition-transform"
+              >
+                <mat-icon class="text-sm">arrow_forward</mat-icon>
+              </button>
+            </div>
           </div>
 
-          <!-- Bottom Bar -->
-           <div class="flex flex-col md:flex-row justify-between items-center gap-6 px-4">
-              <p class="text-slate-400 dark:text-slate-500 text-sm font-medium">
-                 {{ i18n().portfolioCopyright }}
-              </p>
-              <div class="flex gap-8 text-sm font-bold text-slate-400 dark:text-slate-500">
-                 <a href="#" class="hover:text-primary transition-colors">{{ i18n().portfolioPrivacy }}</a>
-                 <a href="#" class="hover:text-primary transition-colors">{{ i18n().portfolioTerms }}</a>
+          <!-- Quick Links -->
+          <div class="lg:col-span-2 space-y-8">
+            <h4 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-widest">
+              {{ i18n().navMenu || 'Links' }}
+            </h4>
+            <ul class="space-y-4">
+              @for (link of i18n().portfolioFooterLinks; track link) {
+                <li>
+                  <a
+                    href="#"
+                    class="group flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-all font-medium"
+                  >
+                    <span
+                      class="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-700 group-hover:w-4 group-hover:bg-primary transition-all"
+                    ></span>
+                    {{ link }}
+                  </a>
+                </li>
+              }
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="lg:col-span-3 space-y-8">
+            <h4 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-widest">
+              {{ i18n().portfolioContactTitleHighlight || 'Contact' }}
+            </h4>
+            <div class="space-y-6">
+              <a [href]="'mailto:' + i18n().portfolioEmail" class="flex items-center gap-4 group">
+                <div
+                  class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all"
+                >
+                  <svg
+                    class="w-5 h-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </svg>
+                </div>
+                <span
+                  class="text-slate-600 dark:text-slate-300 font-medium group-hover:text-primary transition-colors truncate"
+                  >{{ i18n().portfolioEmail }}</span
+                >
+              </a>
+              <a [href]="'tel:' + i18n().portfolioPhone" class="flex items-center gap-4 group">
+                <div
+                  class="w-10 h-10 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center group-hover:bg-secondary group-hover:text-white transition-all"
+                >
+                  <svg
+                    class="w-5 h-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                    />
+                  </svg>
+                </div>
+                <span
+                  class="text-slate-600 dark:text-slate-300 font-medium group-hover:text-secondary transition-colors"
+                  >{{ i18n().portfolioPhone }}</span
+                >
+              </a>
+              <a [href]="'add:' + i18n().portfolioAddress" class="flex items-center gap-4 group">
+                <div
+                  class="w-10 h-10 rounded-xl bg-warning/10 text-warning flex items-center justify-center group-hover:bg-warning group-hover:text-white transition-all"
+                >
+                  <svg
+                    class="w-5 h-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <span
+                  class="text-slate-600 dark:text-slate-300 font-medium group-hover:text-warning transition-colors"
+                  >{{ i18n().portfolioAddress }}</span
+                >
+              </a>
+            </div>
+          </div>
+
+          <!-- Social Stats/Links -->
+          <div class="lg:col-span-3 space-y-8">
+            <h4 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-widest">
+              {{ i18n().navGetStarted || 'Connect' }}
+            </h4>
+            <div class="flex flex-wrap gap-4">
+              <!-- GitHub -->
+              <div class="relative group">
+                <a
+                  [href]="i18n().portfolioGithub"
+                  target="_blank"
+                  class="w-14 h-14 rounded-2xl glass-panel flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-900 dark:hover:bg-white hover:text-dark dark:hover:text-slate-900 transition-all group"
+                >
+                  <svg
+                    class="w-7 h-7 group-hover:rotate-12 transition-transform"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+                    />
+                    <path d="M9 18c-4.51 2-5-2-7-2" />
+                  </svg>
+                </a>
+                <!-- Popover -->
+                <div
+                  class="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-64 glass-panel rounded-2xl shadow-2xl transition-all duration-300 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 z-50 overflow-hidden border border-white/20 dark:border-slate-700/50 after:absolute after:-bottom-4 after:left-0 after:w-full after:h-4"
+                >
+                  <div
+                    class="px-4 py-2 bg-slate-900 text-white dark:bg-white dark:text-slate-900 border-b border-white/20 dark:border-slate-700/50"
+                  >
+                    <h3 class="font-bold text-sm">{{ i18n().portfolioPopoverGithubTitle }}</h3>
+                  </div>
+                  <div class="px-4 py-3">
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed text-left">
+                      {{ i18n().portfolioPopoverGithubDesc }}
+                    </p>
+                  </div>
+                  <div
+                    class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white/70 dark:bg-slate-900/80 rotate-45 border-r border-b border-white/20 dark:border-slate-700/50 -z-10"
+                  ></div>
+                </div>
               </div>
-           </div>
-       </div>
-    </footer>
+
+              <!-- LinkedIn -->
+              <div class="relative group">
+                <a
+                  [href]="i18n().portfolioLinkedin"
+                  target="_blank"
+                  class="w-14 h-14 rounded-2xl glass-panel flex items-center justify-center text-slate-600 dark:text-primary hover:bg-dark-50 hover:text-blue-700 transition-all group"
+                >
+                  <svg
+                    class="w-7 h-7 group-hover:-rotate-12 transition-transform"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                    />
+                    <rect width="4" height="12" x="2" y="9" />
+                    <circle cx="4" cy="4" r="2" />
+                  </svg>
+                </a>
+                <!-- Popover -->
+                <div
+                  class="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-64 glass-panel rounded-2xl shadow-2xl transition-all duration-300 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 z-50 overflow-hidden border border-white/20 dark:border-slate-700/50 after:absolute after:-bottom-4 after:left-0 after:w-full after:h-4"
+                >
+                  <div
+                    class="px-4 py-2 bg-[#0077b5] text-white border-b border-white/20 dark:border-slate-700/50"
+                  >
+                    <h3 class="font-bold text-sm">{{ i18n().portfolioPopoverLinkedinTitle }}</h3>
+                  </div>
+                  <div class="px-4 py-3">
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed text-left">
+                      {{ i18n().portfolioPopoverLinkedinDesc }}
+                    </p>
+                  </div>
+                  <div
+                    class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-[#0077b5] rotate-45 border-r border-b border-white/20 dark:border-slate-700/50 -z-10"
+                  ></div>
+                </div>
+              </div>
+
+              <!-- Placeholder for other social -->
+              <div
+                class="w-14 h-14 rounded-2xl glass-panel flex items-center justify-center text-slate-300 dark:text-slate-700 cursor-not-allowed"
+              >
+                <mat-icon class="scale-125">share</mat-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6 px-4">
+        <p class="text-slate-400 dark:text-slate-500 text-sm font-medium">
+          {{ i18n().portfolioCopyright }}
+        </p>
+        <div class="flex gap-8 text-sm font-bold text-slate-400 dark:text-slate-500">
+          <a href="#" class="hover:text-primary transition-colors">{{ i18n().portfolioPrivacy }}</a>
+          <a href="#" class="hover:text-primary transition-colors">{{ i18n().portfolioTerms }}</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <!-- Scroll to Top Button -->
-<button
-  (click)="scrollToTop()"
-  [class.opacity-100]="showScrollTop()"
-  [class.opacity-0]="!showScrollTop()"
-  [class.pointer-events-auto]="showScrollTop()"
-  [class.pointer-events-none]="!showScrollTop()"
-  class="fixed bottom-8 right-8 w-14 h-14 rounded-full bg-black dark:bg-slate-700 text-white shadow-xl flex items-center justify-center z-[100] transition-opacity duration-300 hover:text-white hover:bg-primary transition-all"
-  aria-label="Scroll to top"
->
-  <mat-icon class="scale-150">expand_less</mat-icon>
-</button>
-
+  <button
+    (click)="scrollToTop()"
+    [class.opacity-100]="showScrollTop()"
+    [class.opacity-0]="!showScrollTop()"
+    [class.pointer-events-auto]="showScrollTop()"
+    [class.pointer-events-none]="!showScrollTop()"
+    class="fixed bottom-8 right-8 w-14 h-14 rounded-full bg-black dark:bg-slate-700 text-white shadow-xl flex items-center justify-center z-[100] transition-opacity duration-300 hover:text-white hover:bg-primary transition-all"
+    aria-label="Scroll to top"
+  >
+    <mat-icon class="scale-150">expand_less</mat-icon>
+  </button>
 </div>
-

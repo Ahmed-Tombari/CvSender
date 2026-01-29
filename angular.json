@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "test": {
+    "CvSender": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,14 +17,12 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "baseHref": "/CvSender/",
-            "deployUrl": "/CvSender/",
-			"outputPath": "dist/test",
+            "outputPath": "dist/CvSender",
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-			"baseHref": "/",
-            "deployUrl": "/",
+            "baseHref": "/CvSender/",
+            "deployUrl": "/CvSender/",
             "assets": [
               {
                 "glob": "**/*",
@@ -40,8 +38,8 @@
               "src/styles.scss"
             ],
             "scripts": [
-               "node_modules/apexcharts/dist/apexcharts.min.js"
-]
+              "node_modules/apexcharts/dist/apexcharts.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -71,10 +69,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "test:build:production"
+              "buildTarget": "CvSender:build:production"
             },
             "development": {
-              "buildTarget": "test:build:development"
+              "buildTarget": "CvSender:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -85,8 +83,6 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
-            "baseHref": "/CvSender/",
-            "deployUrl": "/CvSender/",
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -104,8 +100,8 @@
               "src/styles.scss"
             ],
             "scripts": [
-  "node_modules/apexcharts/dist/apexcharts.min.js"
-]
+              "node_modules/apexcharts/dist/apexcharts.min.js"
+            ]
           }
         }
       }
