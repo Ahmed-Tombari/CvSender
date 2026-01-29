@@ -196,6 +196,7 @@ export class Navbar {
     if (this.isMenuOpen()) {
         this.isMenuOpen.set(false);
     }
+    this.router.navigate([path]);
   }
 
   /**
@@ -207,8 +208,7 @@ export class Navbar {
         this.isMenuOpen.set(false);
     }
     console.log(`Navigating to main link: /${path}`);
-    // Router navigation logic goes here:
-    // inject(Router).navigate([path]);
+    this.router.navigate([path]);
   }
 
   modalOpen = signal(false);
