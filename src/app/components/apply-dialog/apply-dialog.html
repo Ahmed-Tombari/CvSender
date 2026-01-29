@@ -1,0 +1,199 @@
+@if (isOpen()) {
+<div
+  class="relative max-w-3xl glass-panel p-8 mx-auto animate-scale-in shadow-2xl"
+  role="dialog"
+  aria-modal="true"
+>
+<div class="flex justify-between items-center mb-6">
+  <!-- Close button inside popup -->
+  <button
+    type="button"
+    aria-label="Close dialog"
+    (click)="closed.emit()"
+    class="absolute top-4 right-4 p-2 bg-slate-50 dark:bg-slate-800 rounded-full inline-flex items-center justify-center text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+  >
+    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+
+</div>
+  <!-- Header row -->
+  <div class="flex justify-between items-center mb-8">
+    <h2 class="text-3xl font-bold text-slate-800 dark:text-white font-display tracking-tight">{{ i18n().dialogTitle }}</h2>
+
+    <!-- language dropdown -->
+    <div class="relative">
+      <button
+        type="button"
+        (click)="toggleLang()"
+        class="flex items-center gap-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-2.5 shadow-sm hover:bg-white dark:hover:bg-slate-700 transition-all text-slate-700 dark:text-slate-200 font-medium text-sm"
+      >
+        <span [class]="selectedLang().flag + ' fi w-5 h-3.5 rounded-sm shadow-sm'"></span>
+        <span>{{ selectedLang().label }}</span>
+        <svg class="w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none">
+          <path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      @if (langOpen()) {
+      <div class="absolute right-0 mt-2 w-48 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 z-50 overflow-hidden animate-fade-in">
+        @for (l of languages; track l.code) {
+        <div
+          (click)="form.patchValue({language: l.code}); langOpen.set(false)"
+          class="px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-700 flex items-center cursor-pointer transition-colors border-b border-slate-50 dark:border-slate-700 last:border-0"
+        >
+          <span [class]="l.flag + ' fi w-5 h-3.5 mr-3 rounded-sm shadow-sm'"></span>
+          <span class="font-medium text-slate-700 dark:text-slate-200 text-sm">{{ l.label }}</span>
+          @if (form.value.language === l.code) {
+          <span class="ml-auto text-primary-DEFAULT font-bold">✓</span>
+          }
+        </div>
+        }
+      </div>
+      }
+    </div>
+  </div>
+
+  <!-- FORM (unchanged except signals + no *ngIf) -->
+  <form [formGroup]="form" (ngSubmit)="submit()" class="w-full space-y-6">
+
+    <!-- HR email & position -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <label class="block text-slate-700 dark:text-slate-300 font-semibold mb-2 text-sm">{{ i18n().hrEmailLabel }} <span class="text-red-500">*</span></label>
+        <input
+          type="email"
+          formControlName="hr_email"
+          class="input-glass"
+          [placeholder]="i18n().hrEmailPlaceholder"
+        />
+
+        @if (form.get('hr_email')?.touched && form.get('hr_email')?.invalid) {
+        <p class="text-red-500 text-xs mt-1.5 font-medium animate-pulse">
+          @if (form.get('hr_email')?.hasError('required')) { {{ i18n().requiredError }} }
+          @if (form.get('hr_email')?.hasError('email')) { {{ i18n().emailError }} }
+        </p>
+        }
+      </div>
+
+      <div>
+        <label class="block text-slate-700 dark:text-slate-300 font-semibold mb-2 text-sm">{{ i18n().positionLabel }} <span class="text-red-500">*</span></label>
+        <input
+          formControlName="position"
+          class="input-glass"
+          [placeholder]="i18n().positionPlaceholder"
+        />
+
+        @if (form.get('position')?.touched && form.get('position')?.invalid) {
+        <p class="text-red-500 text-xs mt-1.5 font-medium animate-pulse">{{ i18n().requiredError }}</p>
+        }
+      </div>
+    </div>
+
+    <!-- Subject & CV -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <label class="block text-slate-700 dark:text-slate-300 font-semibold mb-2 text-sm">{{ i18n().subjectLabel }} <span class="text-red-500">*</span></label>
+        <input
+          formControlName="subject"
+          class="input-glass"
+          [placeholder]="i18n().subjectPlaceholder"
+        />
+
+        @if (form.get('subject')?.touched && form.get('subject')?.invalid) {
+        <p class="text-red-500 text-xs mt-1.5 font-medium animate-pulse">{{ i18n().requiredError }}</p>
+        }
+      </div>
+
+      <div class="relative">
+        <label class="block text-slate-700 dark:text-slate-300 font-semibold mb-2 text-sm">{{ i18n().cvLabel }} <span class="text-red-500">*</span></label>
+
+        <button
+          type="button"
+          (click)="toggleCV()"
+          class="w-full text-left input-glass flex items-center justify-between cursor-pointer"
+        >
+          <span class="truncate">{{ selectedCV() }}</span>
+          <svg class="w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none">
+            <path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        @if (cvOpen()) {
+        <div class="absolute right-0 mt-2 w-full bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 z-40 overflow-hidden animate-fade-in">
+          @for (c of cvOptions; track c.id) {
+          <div
+            (click)="form.patchValue({cv_name: c.id}); cvOpen.set(false)"
+            class="px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-700 cursor-pointer flex items-center border-b border-slate-50 dark:border-slate-700 last:border-0 transition-colors"
+          >
+            <span class="text-sm text-slate-700 dark:text-slate-200">{{ c.label }}</span>
+            @if (form.value.cv_name === c.id) {
+            <span class="ml-auto text-primary-DEFAULT font-bold">✓</span>
+            }
+          </div>
+          }
+        </div>
+        }
+
+        @if (form.get('cv_name')?.touched && form.get('cv_name')?.invalid) {
+        <p class="text-red-500 text-xs mt-1.5 font-medium animate-pulse">{{ i18n().cvError }}</p>
+        }
+      </div>
+    </div>
+
+    <!-- Description -->
+    <div>
+      <label class="block text-slate-700 dark:text-slate-300 font-semibold mb-2 text-sm">{{ i18n().descriptionLabel }} <span class="text-red-500">*</span></label>
+
+      <textarea
+        rows="5"
+        formControlName="description"
+        class="input-glass resize-none"
+        [placeholder]="i18n().descriptionPlaceholder"
+      ></textarea>
+
+      @if (form.get('description')?.touched && form.get('description')?.invalid) {
+      <p class="text-red-500 text-xs mt-1.5 font-medium animate-pulse">{{ i18n().requiredError }}</p>
+      }
+    </div>
+
+    <!-- Submit -->
+    <div class="flex justify-end pt-4">
+      <button
+        type="submit"
+        [disabled]="loading()"
+        class="w-full md:w-auto btn-gradient-primary shadow-glow-primary min-w-[200px]"
+      >
+        @if (!loading()) { 
+          <span>{{ i18n().sendButton }}</span>
+        }
+        @else { 
+          <div class="flex items-center gap-2">
+            <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <span>{{ i18n().sendingButton }}</span>
+          </div>
+        }
+      </button>
+    </div>
+
+    @if (error()) {
+    <p class="text-red-500 text-center text-sm font-medium bg-red-50 dark:bg-red-900/20 p-3 rounded-lg border border-red-100 dark:border-red-900/30">{{ error() }}</p>
+    }
+  </form>
+
+  <!-- LOADING OVERLAY -->
+  @if (loading()) {
+  <div
+    class="absolute inset-0 bg-white/60 dark:bg-slate-900/60 backdrop-blur-sm flex items-center justify-center rounded-2xl z-20"
+  >
+    <div class="h-12 w-12 border-4 border-primary-DEFAULT border-t-transparent rounded-full animate-spin"></div>
+  </div>
+  }
+</div>
+}

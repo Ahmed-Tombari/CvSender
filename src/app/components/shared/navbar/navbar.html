@@ -1,0 +1,298 @@
+<nav
+  class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-transparent"
+  [class.bg-white/80]="isScrolled() && theme() === 'light'"
+  [class.bg-slate-900/80]="isScrolled() && theme() === 'dark'"
+  [class.backdrop-blur-xl]="isScrolled()"
+  [class.shadow-glass]="isScrolled()"
+  [class.border-white/40]="isScrolled() && theme() === 'light'"
+  [class.border-slate-800/40]="isScrolled() && theme() === 'dark'"
+  [class.py-3]="isScrolled()"
+  [class.py-5]="!isScrolled()"
+  [class.bg-transparent]="!isScrolled()"
+>
+  <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-3 group">
+      <div
+        class="relative w-10 h-10 flex items-center justify-center bg-gradient-primary rounded-xl shadow-glow-primary group-hover:scale-105 transition-transform duration-300"
+      >
+        <img
+          ngSrc="/assets/img/cv_sender_logo.png"
+          alt="Logo"
+          class="w-6 h-auto object-contain brightness-0 invert"
+          width="24"
+          height="11"
+        />
+      </div>
+      <span
+        class="text-xl font-bold text-slate-800 dark:text-white font-display tracking-tight group-hover:text-primary transition-colors"
+      >
+        CVSender
+      </span>
+    </a>
+
+      <!-- Desktop Menu -->
+    <ul class="hidden md:flex items-center gap-1">
+      <!-- <li>
+        <a
+          class="px-4 py-2 rounded-lg text-slate-600 hover:text-primary hover:bg-slate-50/50 font-medium transition-all text-sm uppercase tracking-wide"
+          routerLink="/portfolio"
+          >{{ i18n().navPortfolio }}</a
+        >
+      </li> -->
+        <li>
+        <a
+          class="px-4 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50/50 dark:hover:bg-slate-800/50 font-medium transition-all text-sm uppercase tracking-wide"
+          href="/"
+          >{{ i18n().navHome }}</a>
+      </li>
+      <li>
+        <a
+          class="px-4 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50/50 dark:hover:bg-slate-800/50 font-medium transition-all text-sm uppercase tracking-wide"
+          href="/portfolio"
+          >{{ i18n().navPortfolio }}</a>
+      </li>
+      <li>
+        <a
+          class="px-4 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50/50 dark:hover:bg-slate-800/50 font-medium transition-all text-sm uppercase tracking-wide"
+          href="#"
+          >{{ i18n().navServices }}</a>
+      </li>
+      <li>
+        <a
+          class="px-4 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50/50 dark:hover:bg-slate-800/50 font-medium transition-all text-sm uppercase tracking-wide"
+          href="#"
+          >{{ i18n().navPricing }}</a>
+      </li>
+    </ul>
+
+    <!-- Right Actions -->
+    <div class="hidden md:flex items-center gap-4">
+      <!-- Search -->
+      <div class="relative group">
+        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+          <svg
+            class="h-4 w-4 text-slate-400 group-focus-within:text-primary transition-colors"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            />
+          </svg>
+        </div>
+        <input
+          type="search"
+          [placeholder]="i18n().navSearchPlaceholder"
+          [value]="searchTerm()"
+          (input)="updateSearchTerm($event)"
+          (keyup.enter)="handleSearch()"
+          (focus)="showDesktopResults.set(true)"
+          (blur)="hideResultsWithDelay()"
+          class="pl-9 pr-4 py-2.5 text-sm bg-slate-100/50 dark:bg-slate-800/50 border border-slate-200/50 dark:border-slate-700/50 focus:bg-white dark:focus:bg-slate-800 focus:border-primary focus:ring-4 focus:ring-primary-light/20 rounded-full w-48 focus:w-64 transition-all duration-300 outline-none text-slate-700 dark:text-slate-200 placeholder-slate-400 shadow-inner-light"
+        />
+
+        <!-- Search Results Dropdown -->
+        @if (isDesktopResultsVisible()) {
+        <div
+          class="absolute right-0 mt-4 w-80 glass-panel rounded-xl overflow-hidden animate-fade-in origin-top-right z-50"
+        >
+          @if (filteredResults().length > 0) { @for (result of filteredResults(); track result.id) {
+          <a
+            (click)="navigateTo(result.path)"
+            class="flex flex-col p-4 border-b border-slate-100/50 hover:bg-slate-50/50 transition cursor-pointer group"
+          >
+            <span
+              class="font-semibold text-sm text-slate-800 dark:text-white group-hover:text-primary transition-colors"
+              >{{ result.title }}</span
+            >
+            <span class="text-xs text-slate-500 dark:text-slate-400 line-clamp-1">{{ result.description }}</span>
+          </a>
+          } } @else if (searchTerm().length > 0) {
+          <div class="p-6 text-center text-slate-500 dark:text-slate-400 text-sm">
+            No results found for "{{ searchTerm() }}"
+          </div>
+          }
+        </div>
+        }
+      </div>
+
+      <!-- Theme Toggle -->
+      <button
+        (click)="toggleTheme()"
+        class="w-10 h-10 rounded-lg flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-all"
+        [title]="theme() === 'light' ? 'Dark Mode' : 'Light Mode'"
+      >
+        <mat-icon class="scale-90">
+          {{ theme() === 'light' ? 'dark_mode' : 'light_mode' }}
+        </mat-icon>
+      </button>
+
+      <!-- Language Dropdown -->
+      <div class="relative">
+        <button
+          type="button"
+          (click)="toggleLang()"
+          class="flex items-center justify-center gap-2 bg-slate-50/50 dark:bg-slate-800/50 border border-slate-200/50 dark:border-slate-700/50 rounded-lg p-2.5 hover:bg-white dark:hover:bg-slate-800 transition-all text-slate-700 dark:text-slate-200 font-medium text-sm group"
+          [attr.aria-label]="getSelectedLangOption().code"
+        >
+          <span [class]="getSelectedLangOption().flag + ' fi w-6 h-4 rounded-sm shadow-sm'"></span>
+          <svg
+            class="w-3.5 h-3.5 text-slate-400 group-hover:text-primary transition-colors"
+            [class.rotate-180]="langOpen()"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M19 9l-7 7-7-7"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+
+        @if (langOpen()) {
+        <div
+          class="absolute right-0 mt-2 w-16 bg-white dark:bg-slate-800 glass-panel rounded-xl shadow-xl overflow-hidden animate-fade-in origin-top-right z-50 flex flex-col items-center py-2 border border-slate-100 dark:border-slate-700"
+        >
+          @for (l of languages; track l.code) {
+          <button
+            type="button"
+            (click)="selectLanguage(l.code)"
+            class="w-full px-2 py-2 hover:bg-slate-50 dark:hover:bg-slate-700 flex items-center justify-center cursor-pointer transition-colors relative"
+            [title]="l.code"
+          >
+            <span [class]="l.flag + ' fi w-6 h-4 rounded-sm shadow-sm'"></span>
+            @if (selectedLang() === l.code) {
+             <div class="absolute right-1 bottom-1 w-1.5 h-1.5 bg-primary rounded-full"></div>
+            }
+          </button>
+          }
+        </div>
+        }
+      </div>
+
+      <!-- CTA Button -->
+      <button type="button" class="btn-gradient-primary shadow-glow-primary hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300" (click)="openApply()">
+        {{ i18n().navGetStarted }}
+      </button>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button class="md:hidden relative z-50 p-2 text-slate-600 hover:text-primary transition-colors" (click)="toggleMenu()">
+      <div class="w-6 h-5 flex flex-col justify-between">
+        <span
+          class="w-full h-0.5 bg-current rounded-full transition-all duration-300"
+          [class.rotate-45]="isMenuOpen()"
+          [class.translate-y-2]="isMenuOpen()"
+        ></span>
+        <span
+          class="w-full h-0.5 bg-current rounded-full transition-all duration-300"
+          [class.opacity-0]="isMenuOpen()"
+        ></span>
+        <span
+          class="w-full h-0.5 bg-current rounded-full transition-all duration-300"
+          [class.-rotate-45]="isMenuOpen()"
+          [class.-translate-y-2.5]="isMenuOpen()"
+        ></span>
+      </div>
+    </button>
+  </div>
+
+  <!-- Mobile Menu Overlay -->
+  @if (isMenuOpen()) {
+  <div
+    class="fixed inset-0 bg-slate-900/20 backdrop-blur-sm z-40 md:hidden"
+    (click)="toggleMenu()"
+  ></div>
+  <div
+    class="fixed top-0 right-0 h-full w-[85%] max-w-sm glass-panel z-50 p-6 flex flex-col gap-6 animate-slide-up md:hidden border-l border-white/40"
+  >
+    <div class="flex items-center justify-between border-b border-slate-100/50 dark:border-slate-800/50 pb-4">
+      <span class="text-xl font-bold text-slate-800 dark:text-white font-display">{{ i18n().navMenu }}</span>
+      <button (click)="toggleMenu()" class="p-2 text-slate-400 hover:text-slate-600">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Search -->
+    <div class="relative">
+      <input
+        type="search"
+        [placeholder]="i18n().navSearchPlaceholder"
+        [value]="searchTerm()"
+        (input)="updateSearchTerm($event)"
+        class="input-glass pl-10"
+      />
+      <svg
+        class="w-5 h-5 text-slate-400 absolute left-3 top-3.5"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+        />
+      </svg>
+    </div>
+
+    <ul class="flex flex-col gap-2">
+      <li>
+        <a
+          (click)="navigateTo('home')"
+          class="text-base font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50/50 dark:hover:bg-slate-800/50 rounded-lg px-4 py-3 transition-colors block"
+          >{{ i18n().navHome }}</a>
+      </li>
+      <li>
+        <a
+          (click)="navigateTo('services')"
+          class="text-base font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50/50 dark:hover:bg-slate-800/50 rounded-lg px-4 py-3 transition-colors block"
+          >{{ i18n().navServices }}</a>
+      </li>
+      <li>
+        <a
+          (click)="navigateTo('pricing')"
+          class="text-base font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50/50 dark:hover:bg-slate-800/50 rounded-lg px-4 py-3 transition-colors block"
+          >{{ i18n().navPricing }}</a>
+      </li>
+      <li class="mt-4 pt-4 border-t border-slate-100/50 dark:border-slate-800/50">
+        <button
+          (click)="toggleTheme()"
+          class="w-full flex items-center justify-between text-base font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50/50 dark:hover:bg-slate-800/50 rounded-lg px-4 py-3 transition-colors"
+        >
+          <span>{{ theme() === 'light' ? 'Dark Mode' : 'Light Mode' }}</span>
+          <mat-icon>{{ theme() === 'light' ? 'dark_mode' : 'light_mode' }}</mat-icon>
+        </button>
+      </li>
+    </ul>
+
+    <button class="btn-gradient-primary w-full mt-auto shadow-glow-primary" (click)="openApply()">{{ i18n().navGetStarted }}</button>
+  </div>
+  }
+
+  <!-- Apply Dialog Modal -->
+  @if (modalOpen()) {
+  <div class="fixed inset-0 z-[60] flex items-center justify-center p-4">
+    <div class="absolute inset-0 bg-slate-900/40 backdrop-blur-md" (click)="closeApply()"></div>
+    <div class="relative z-10 w-full max-w-4xl animate-scale-in">
+      <app-apply-dialog [isOpen]="modalOpen()" (closed)="closeApply()" />
+    </div>
+  </div>
+  }
+</nav>

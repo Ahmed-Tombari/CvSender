@@ -1,0 +1,21 @@
+:host {
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 10px rgba(0, 0, 0, 0.2);
+  }
+}
+
+mat-icon {
+  font-size: 2rem;
+  height: 2rem;
+  width: 2rem;
+  line-height: 2rem;
+}
+.stat-card-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

@@ -1,0 +1,14 @@
+<div class="w-full flex justify-center relative">
+
+  <div id="chart">
+    @if (chartOptions()) {
+      <apx-chart
+        [series]="chartOptions().series"
+        [chart]="chartOptions().chart"
+        [labels]="chartOptions().labels"
+        [responsive]="chartOptions().responsive"
+        [colors]="chartOptions().colors"
+      ></apx-chart>
+    }
+  </div>
+</div>

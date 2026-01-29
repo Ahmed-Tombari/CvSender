@@ -1,0 +1,23 @@
+<div class="min-h-screen flex items-center justify-center p-6 bg-gradient-primary relative overflow-hidden">
+  <!-- Decorative Background Elements -->
+  <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
+  <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-white/10 blur-3xl animate-pulse-slow"></div>
+  <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-white/10 blur-3xl animate-pulse-slow" style="animation-delay: 1s;"></div>
+
+  <div class="relative z-10 max-w-md w-full glass-panel p-10 text-center animate-scale-in shadow-2xl">
+    <div class="w-24 h-24 rounded-full bg-gradient-to-br from-green-400 to-green-600 mx-auto flex items-center justify-center mb-6 shadow-glow-secondary animate-bounce">
+      <svg class="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+      </svg>
+    </div>
+    
+    <h2 class="text-3xl font-bold text-slate-800 dark:text-white mb-3 font-display tracking-tight">Application Sent!</h2>
+    <p class="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
+      Your application was sent successfully. We will review your profile and contact you shortly.
+    </p>
+    
+    <button (click)="backHome()" class="w-full btn-glass text-primary-DEFAULT font-bold py-3.5 hover:bg-white/80">
+      Back to Home
+    </button>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6">
+  <app-stat-card
+    [title]="i18n().statTotalFiles"
+    [mainMetricValue]="(summary()?.totalFiles || 0).toString()"
+    [secondaryMetricLabel]="i18n().statFilesToday"
+    [secondaryMetricValue]="(summary()?.filesToday || 0).toString()"
+    [period]="i18n().statPeriodAllTime"
+    color="blue"
+    icon="description"
+    [isLoading]="isLoading()"
+  ></app-stat-card>
+
+  <app-stat-card
+    [title]="i18n().statSendedFiles"
+    [mainMetricValue]="(summary()?.totalCVSent || 0).toString()"
+    [secondaryMetricLabel]="i18n().statToday"
+    [secondaryMetricValue]="(summary()?.cvSentToday || 0).toString()"
+    [period]="i18n().statPeriodAllTime"
+    color="green"
+    icon="rocket_launch"
+    [isLoading]="isLoading()"
+  ></app-stat-card>
+
+  <app-stat-card
+    [title]="i18n().statDailyUploads"
+    [mainMetricValue]="(summary()?.cvSentToday || 0).toString()"
+    [secondaryMetricLabel]="'CVs'"
+    [secondaryMetricValue]="i18n().statActive"
+    [period]="i18n().statPeriodToday"
+    color="orange"
+    icon="cloud_upload"
+    [isLoading]="isLoading()"
+  ></app-stat-card>
+
+  <app-stat-card
+    [title]="i18n().statSystemStatus"
+    [mainMetricValue]="i18n().statOnline"
+    [secondaryMetricLabel]="i18n().statUptime"
+    [secondaryMetricValue]="'99.9%'"
+    [period]="i18n().statPeriodNow"
+    color="pink"
+    icon="monitor_heartbeat"
+    [isLoading]="isLoading()"
+  ></app-stat-card>
+</div>

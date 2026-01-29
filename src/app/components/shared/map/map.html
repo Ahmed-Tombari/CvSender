@@ -1,0 +1,45 @@
+<div class="w-full h-full relative group">
+  <!-- Viewport for clipping -->
+  <div class="w-full h-[380px] rounded-b-2xl overflow-hidden bg-slate-50/50 relative">
+    
+    <!-- Draggable Container -->
+    <div
+      cdkDrag
+      [cdkDragDisabled]="!isDraggable()"
+      [style.transform]="mapTransform()"
+      class="w-full h-full origin-center transition-transform duration-300 ease-out cursor-grab active:cursor-grabbing"
+      [class.cursor-default]="!isDraggable()"
+      (wheel)="onWheel($event)"
+    >
+      <div id="regionsMap" class="w-full h-full"></div>
+    </div>
+
+    <!-- Zoom Controls -->
+    <div class="absolute bottom-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <button (click)="zoomIn()" class="zoom-btn" title="Zoom In">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+        </svg>
+      </button>
+      
+      <button (click)="resetZoom()" class="zoom-btn" title="Reset Zoom">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M20 8V4m0 0h-4M4 16v4m0 0h4M20 16v4m0 0h-4" />
+        </svg>
+      </button>
+
+      <button (click)="zoomOut()" class="zoom-btn" title="Zoom Out">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Zoom Level Indicator -->
+    @if (zoomLevel() > 1) {
+      <div class="absolute top-4 left-4 bg-white/80 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-primary-DEFAULT shadow-sm animate-fade-in">
+        {{ zoomLevel() }}x
+      </div>
+    }
+  </div>
+</div>

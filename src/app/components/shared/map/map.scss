@@ -1,0 +1,31 @@
+#regionsMap {
+  outline: none;
+
+  transition: transform 0.4s ease;
+}
+
+#regionsMap:hover {
+  transform: scale(1.02);
+}
+
+/* Pulse markers (si tu veux ajouter des markers custom SVG plus tard) */
+.pulse-marker {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #2563eb;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  animation: pulse 1.6s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.6);
+    opacity: 0;
+  }
+}
